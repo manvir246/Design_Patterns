@@ -1,4 +1,4 @@
-1. Here the issue is we have repetitive code in class offRoad and Sports Vehicle. 
-That means if new functionality comes in future then code duplicacy may also increase.
+1. The issue is that we have repetitive code in the OffRoad and SportsVehicle classes.
+If new functionality is added in the future, the code duplication may increase further.
 
-2. It is a Behavioural Design Patttern.
+2. It is a Behavioral Design Pattern.
