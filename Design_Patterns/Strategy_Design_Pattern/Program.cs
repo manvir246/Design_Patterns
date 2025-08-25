@@ -1,4 +1,5 @@
 ﻿using ObserverPattern;
+using DecoratorPattern;
 namespace WithStrategyPattern
 {
     class Program
@@ -25,6 +26,11 @@ namespace WithStrategyPattern
             iphoneObeservable.Add(subscriber3);
 
             iphoneObeservable.SetStock(2);
+            // Ends
+
+            // Decorator Patterns: Starts
+            BasePizza pizza = new MargheritaPizza(new MushroomPizza(new CheesePizza()));
+            Console.WriteLine(pizza.Cost());
             // Ends
         }
     }
