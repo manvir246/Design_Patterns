@@ -11,12 +11,12 @@ namespace ObserverPattern
         }
         public void Update()
         {
-            SendEmail(emailId, "Iphone stock is back");
+            SendEmail(emailId, "Email sent to : ");
             obj.GetStock(); //if we want to get some data from observable then need to pass the constructor as Ibservable
         }
         void SendEmail(string emailId, string message)
         {
-            Console.WriteLine(emailId + " " + message);
+            Console.WriteLine(message + emailId);
         }
     }
 }
