@@ -1,3 +1,4 @@
+Key points:
 1. When the subject (publisher) changes state, all its observers (subscribers) are notified automatically.
 
 2. Promotes loose coupling → subject doesn’t need to know details of observers, only that they want updates.
