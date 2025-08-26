@@ -1,37 +1,51 @@
 ﻿using ObserverPattern;
 using DecoratorPattern;
+using FactoryPattern;
 namespace WithStrategyPattern
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            // Strategy Pattern: Start
+            #region Strategy Pattern
+
             // Vehicle vehicle = new NormalVehicle();
             // vehicle.Drive();
 
             // Vehicle vehicle1 = new SportsVehicle();
             // vehicle1.Drive();
-            // Ends
 
-            // Observer pattern: Start
-            IphoneObeservable iphoneObeservable = new IphoneObeservable();
+            #endregion
 
-            INotificationAlertObserver subscriber1 = new MobileNotificationAlertObserver();
-            INotificationAlertObserver subscriber2 = new EmailNotificationAlertObserver("manvir@gmail.com", iphoneObeservable);
-            INotificationAlertObserver subscriber3 = new EmailNotificationAlertObserver("sray@gmail.com", iphoneObeservable);
+            #region Observer pattern
 
-            iphoneObeservable.Add(subscriber1);
-            iphoneObeservable.Add(subscriber2);
-            iphoneObeservable.Add(subscriber3);
+            // IphoneObeservable iphoneObeservable = new IphoneObeservable();
 
-            iphoneObeservable.SetStock(2);
-            // Ends
+            // INotificationAlertObserver subscriber1 = new MobileNotificationAlertObserver();
+            // INotificationAlertObserver subscriber2 = new EmailNotificationAlertObserver("manvir@gmail.com", iphoneObeservable);
+            // INotificationAlertObserver subscriber3 = new EmailNotificationAlertObserver("sray@gmail.com", iphoneObeservable);
 
-            // Decorator Patterns: Starts
-            BasePizza pizza = new MargheritaPizza(new MushroomPizza(new CheesePizza()));
-            Console.WriteLine(pizza.Cost());
-            // Ends
+            // iphoneObeservable.Add(subscriber1);
+            // iphoneObeservable.Add(subscriber2);
+            // iphoneObeservable.Add(subscriber3);
+
+            // iphoneObeservable.SetStock(2);
+
+            #endregion
+
+            #region Decorator Patterns
+
+            // BasePizza pizza = new MargheritaPizza(new MushroomPizza(new CheesePizza()));
+            // Console.WriteLine(pizza.Cost());
+
+            #endregion
+
+            #region Factory Pattern
+
+            // IShape shape = new ShapeFactory().GetShape("Circle");
+            // shape.Draw();
+
+            #endregion
         }
     }
 }
