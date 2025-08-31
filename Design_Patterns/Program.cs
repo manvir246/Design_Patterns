@@ -15,6 +15,16 @@ namespace WithStrategyPattern
             // Vehicle vehicle1 = new SportsVehicle();
             // vehicle1.Drive();
 
+            // Example: 02
+            // var cart = new ShoppingCart();
+
+            // cart.SetPaymentStrategy(new CreditCardPayment());
+            // cart.Checkout(100.0); // Paid 100 using Credit Card.
+
+            // cart.SetPaymentStrategy(new PayPalPayment());
+            // cart.Checkout(200.0); // Paid 200 using PayPal.
+            // At runtime, we easily changed the functionality (creditCard Payment object to PayPal Payment object).
+
             #endregion
 
             #region Observer pattern
@@ -44,6 +54,13 @@ namespace WithStrategyPattern
 
             // IShape shape = new ShapeFactory().GetShape("Circle");
             // shape.Draw();
+
+            #endregion
+
+            #region Tic-Tac-Toe Game
+
+            // Game tictactoe = new Game();
+            // tictactoe.StartGame();
 
             #endregion
         }

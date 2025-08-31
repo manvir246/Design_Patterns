@@ -1,0 +1,5 @@
+enum Pieces
+{
+    X,
+    O
+}
