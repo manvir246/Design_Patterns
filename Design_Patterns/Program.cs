@@ -1,12 +1,45 @@
 ﻿using ObserverPattern;
 using DecoratorPattern;
 using FactoryPattern;
+using Concurrency;
 namespace WithStrategyPattern
 {
     class Program
     {
+        static SemaPhor semaPhore = new SemaPhor(2);
+
+        public static void Worker(object id)
+        {
+            Console.WriteLine($"Thread: {id} is running");
+            semaPhore.Wait();
+            //Critical Section :: Only two threads are allowed at a time.
+
+            Thread.Sleep(1000);
+            Console.WriteLine($"Thread: {id} is in Critical Section.");
+
+            //Leaving
+            semaPhore.Signal();
+            Console.WriteLine($"Thread: {id} left.");
+        }
+
         public static void Main(string[] args)
         {
+
+            #region Multi-Threading Environment Test
+
+            //Using thread pool
+            for (int i = 1; i <= 5; i++)
+                ThreadPool.QueueUserWorkItem(Worker, i);
+
+            //Using normal thread creation
+            for (int i = 1; i <= 5; i++)
+                new Thread(Worker).Start(i);
+
+            RaceCondition raceCondition = new RaceCondition();
+            raceCondition.Run();
+
+            #endregion
+
             #region Strategy Pattern
 
             // Vehicle vehicle = new NormalVehicle();
