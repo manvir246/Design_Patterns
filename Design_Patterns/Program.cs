@@ -2,6 +2,8 @@
 using DecoratorPattern;
 using FactoryPattern;
 using Concurrency;
+using Async;
+using System.Threading.Tasks;
 namespace WithStrategyPattern
 {
     class Program
@@ -22,21 +24,43 @@ namespace WithStrategyPattern
             Console.WriteLine($"Thread: {id} left.");
         }
 
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-
             #region Multi-Threading Environment Test
 
+            // Task t = Task.Run(async () => {
+            //     Console.WriteLine("Task running");
+            //     await Task.Delay(2000);
+            //     Console.WriteLine("Task running");
+            // });
+            // Console.WriteLine("Task outside running");
+            // Console.WriteLine("Task outside running");
+
+    
+            // Prog prog = new Prog();
+            // Task t1 = prog.OrderPizzaAsync();
+            // Task t2 = prog.OrderPizzaAsync();
+            // Task t3 = prog.OrderPizzaAsync();
+            // Task t4 = prog.OrderPizzaAsync();
+
+            // Console.WriteLine("It is in the main method");
+            // Console.WriteLine("It is in the main method");
+            
+            // await t1;
+            // await t2;
+            // await t3;
+            // await t4;
+
             //Using thread pool
-            for (int i = 1; i <= 5; i++)
-                ThreadPool.QueueUserWorkItem(Worker, i);
+            // for (int i = 1; i <= 5; i++)
+            //     ThreadPool.QueueUserWorkItem(Worker, i);
 
             //Using normal thread creation
-            for (int i = 1; i <= 5; i++)
-                new Thread(Worker).Start(i);
+            // for (int i = 1; i <= 5; i++)
+            //     new Thread(Worker).Start(i);
 
-            RaceCondition raceCondition = new RaceCondition();
-            raceCondition.Run();
+            // RaceCondition raceCondition = new RaceCondition();
+            // raceCondition.Run();
 
             #endregion
 
